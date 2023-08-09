@@ -4,11 +4,37 @@ Design a simplified version of Twitter where users can post tweets, follow/unfol
 
 **APPROACH**
 
-**Twitter**
+**1.Twitter**
 
-The most important factor is it uses contiguous memory allocation of data where a block of memory is reserved for a data structure.
-It is an infinite collection of homogeneous(similar type) elements.
-
-- initialize hashmap posttweet it will contain userid with arraylist of pair of tweetid and time
-- initialize hashmap followers. it will contains userid with set of all the following userid (followeid)
+- initialize hashmap posttweet it will contain user-id with ArrayList of pair of tweetid and time
+- initialize hashmap followers. it will contain userid with a set of all the following userid (followeid)
 - initialize time (it will increment time after each call of postTweet)
+
+
+
+**2.Follow and unFollow**
+
+- get HashSet of followerid from hashmap of followers
+- add/remove followeeId in HashSet
+- add hashset into hashmap with followerid
+
+
+**3.PostTweet**
+- Make new Pair consisting of tweetid and time
+- get ArrayList of userid then add the pair to the arraylist
+- add ArrayList in hashmap for userid
+- increment time value by 1
+
+
+**4.getFeedNews (Most important)**
+- get list of followers of userid including userid in set
+- make a HashMap for the tweets of all the followers and user by using pair which consists of tweetid and timestamp
+- Make PriorityQueue (MinHeap) of the hashMap
+- if the size of priorityqueue is less than 10 skip this step. while the size of priorityQueue is more than 10 remove one element from PriorityQueue till it is 10.
+- add all the remaining tweetid in PriorityQueue into ArrayList
+- return reverse of ArrayList
+
+**Complexity**
+- twitter
+     - Time complexity - O(1)
+     - space Complexity - O(1)
