@@ -38,3 +38,19 @@ Design a simplified version of Twitter where users can post tweets, follow/unfol
 - twitter
      - Time complexity - O(1)
      - space Complexity - O(1)
+ 
+- postTweet
+     - Time complexity - O(1)
+     - space Complexity - O(1)
+ 
+- gwtNewsFeed
+     - Time complexity - O(followers*tweets)
+     - space Complexity - O(n)
+
+- follow
+     - Time complexity - O(1)
+     - space Complexity - O(n)
+
+- unfollow
+     - Time complexity - O(1)
+     - space Complexity - O(n)
